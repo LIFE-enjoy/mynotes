@@ -1,0 +1,26 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<header class='top-page-header'>
+  <div class='nav'>
+    <ul class='lists-left'>
+      <li><%= link_to 'Top', "#", class: "top-list" %></li>
+      <li><%= link_to 'メモを追加', "#", class: "add-list" %></li>
+    </ul>
+    <div class="right-nav">
+      <ul class='lists-right'>
+      <%# ログイン状態で表示を変更 %>
+        <li><%= link_to '新規登録', "#", class: "sign-up" %></li>
+        <li><%= link_to 'ログイン', "#", class: "login" %></li>
+        <%# <li><%= link_to 'ユーザ名', "#", class: "user-name" </li>
+        <li><%= link_to 'ログアウト', "#", class: "logout" </li> %>
+      </ul>
+      <div class='search-bar-contents'>
+        <form class="search-form" action="#">
+          <input class='input-box' placeholder='メモを探す'>
+          <button class="search-button">
+            <%= image_tag "search.png", class:"search-icon" %>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
