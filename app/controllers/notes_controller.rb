@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
   before_action :set_index, only: [:index, :new, :edit]
-  before_action :set_note, only: [:edit, :update]
+  before_action :set_note, only: [:edit, :update,:destroy]
 
   def index
   end
@@ -19,6 +19,11 @@ class NotesController < ApplicationController
   def update
     @note.update(note_params)
     redirect_to action: :edit
+  end
+
+  def destroy
+    @note.destroy
+    redirect_to root_path
   end
 
   private
