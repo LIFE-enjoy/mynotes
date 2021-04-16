@@ -1,0 +1,29 @@
+<div class="memo-left">
+  <ul>
+    <div class="folder">
+      <div class="folder-title">
+        <h4>フォルダ</h4>
+        <%= image_tag 'folder.png', class:"folder-image" %>
+      </div>
+      <ul class="folder-links">
+        <li>
+          <%= link_to "フォルダを追加", '#', class:'folder-link' %>
+          <% @notes.each do |note| %>
+            <%= link_to '#', class:'folder-link' do %>
+              <div class="folder-index"><%= note.title %></div>
+            <% end %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </ul>
+  <div class='memo-link'>
+    <% @notes.each do |note| %>
+        <%= link_to edit_note_path(note.id) do %>
+          <div class="memo-index",id='memo-index'>
+            <%= note.title %>
+          </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
