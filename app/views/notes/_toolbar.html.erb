@@ -12,5 +12,5 @@
     <%= link_to image_tag 'share-btn.png', class:'toolbtn' %>
   </div>
   <div class="tools">
-    <%= link_to image_tag('garbage-box.png', class:'toolbtn'),note_path(@note.id), method: :delete %>
+    <%= link_to image_tag('garbage-box.png', class:'toolbtn'),note_path(@note.id), method: :delete, data: { confirm: 'メモを削除しますか？' } %>
 </div>

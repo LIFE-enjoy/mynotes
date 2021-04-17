@@ -59,3 +59,4 @@ end
 
 gem 'actiontext'
 gem 'pry-rails'
+gem 'devise'
