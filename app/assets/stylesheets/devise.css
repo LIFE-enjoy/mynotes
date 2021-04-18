@@ -1,0 +1,111 @@
+/*.start{
+	background: rgb(238, 230, 188);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 9000;
+}
+
+.start-log{
+  text-justify: auto;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 9999;
+	width: 280px;
+  display: none;
+} */
+
+
+
+.start-log > h1{
+  font-family: cursive;
+  font-weight: 900;
+  text-align: center;
+}
+
+.devise-body{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 15vw;
+  background-image: url('wood.jpeg');
+  background-size: 100% 100%;
+}
+
+.devise-body::before{
+  filter: blur(1px);
+}
+
+.devise-top{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-image:url('top_note.png');
+  background-size: 80% 100%;
+  background-repeat: no-repeat;
+}
+
+.devise-content{
+  height: 80%;
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh;
+  font-family: serif;
+}
+
+.devise-menu{
+  height: 80%;
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh;
+}
+
+.signup-title{
+  width: 60%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 4vw;
+  font-family: cursive;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.new_user{
+  width: 50%;
+  margin-left: 6vw;
+  margin-top: 6vh;
+}
+
+
+.signup-field{
+  margin: 2vh;
+}
+
+.actions{
+  display: flex;
+  margin-top: 2vh;
+  margin-left: 4vw;
+}
+
+.submit-btn{
+  width: 100px;
+  height: 38px;
+}
+
+.devise-error{
+  width: 30vw;
+  margin: 100px 0;
+  color: red;
+  text-align: center;
+}

@@ -1,22 +1,24 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
 <header class='top-page-header'>
   <div class='nav'>
-    <ul class='lists-left'>
-      <li><%= link_to 'My Notes', root_path, class: "top-list" %></li>
-      <li><%= link_to 'メモを追加', new_note_path, class: "add-list" %></li>
-    </ul>
-    <div class="right-nav">
-      <ul class='lists-right'>
-        <li><%= link_to '今日は終わり', "#", class: "login" %></li>
+    <% if user_signed_in? %>
+      <ul class='lists-left'>
+        <li><%= link_to 'My Notes', root_path, class: "top-list" %></li>
+        <li><%= link_to 'メモを追加', new_note_path, class: "add-list" %></li>
       </ul>
-      <div class='search-bar-contents'>
-        <form class="search-form" action="#">
-          <input class='input-box' placeholder='メモを探す'>
-          <button class="search-button">
-            <%= image_tag "search.png", class:"search-icon" %>
-          </button>
-        </form>
+      <div class="right-nav">
+        <ul class='lists-right'>
+          <li><%= link_to '今日は終わり', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        </ul>
+        <div class='search-bar-contents'>
+          <form class="search-form" action="#">
+            <input class='input-box' placeholder='メモを探す'>
+            <button class="search-button">
+              <%= image_tag "search.png", class:"search-icon" %>
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </header>

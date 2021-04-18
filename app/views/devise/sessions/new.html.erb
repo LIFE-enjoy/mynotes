@@ -1,0 +1,49 @@
+<div class='devise-body'>
+  <div class="devise-top">
+    <div class="devise-menu">
+      <div>ようこそ</div>
+      <div class='devise-error'>
+        <%= devise_error_messages! %>
+      </div>
+    </div>
+    <div class="devise-content">
+      <div class='signup-title'>
+        <h2>Log in</h2>
+        <%= link_to '新規登録はこちら', new_user_registration_path %>
+      </div>
+      <%= form_with model: @user, url: new_user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+        <div class="signup-field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email %>
+        </div>
+
+        <div class="signup-field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="signup-field">
+            <%= f.label :remember_me %><br />
+            <%= f.check_box :remember_me %>
+          </div>
+        <% end %>
+
+        <div class="actions">
+          <%= f.submit "Log in", class:'submit-btn' %>
+        </div>
+      <% end %>
+    </div>
+
+  <%# フェードインアクション %>
+    <%# <div class="start">
+      <div class='start-log'>
+        <%= image_tag "note.png" 
+        <h1>My Notes</h1>
+      </div>
+    </div> %>
+  </div> 
+</div> 

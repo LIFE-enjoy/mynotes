@@ -6,7 +6,7 @@ class NotesController < ApplicationController
   end
 
   def new
-    @note = Note.create(title:'新規メモ',content:'')
+    @note = Note.create(title:'新規メモ',content:'',user_id: current_user.id)
   end
 
   def create
@@ -28,7 +28,7 @@ class NotesController < ApplicationController
 
   private
   def note_params
-    params.require(:note).permit(:title, :content,)
+    params.require(:note).permit(:title, :content,).merge(user_id: current_user.id)
   end
 
   def set_index
