@@ -32,6 +32,5 @@ function autoText (){
   });
 };
 
-
 window.addEventListener('load',inputTitle)
 window.addEventListener('load',saveText)

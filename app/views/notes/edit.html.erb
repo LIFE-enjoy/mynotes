@@ -15,8 +15,8 @@
           <%= f.text_field :title, id:'memo-title', class:'memo-title' %>
         </div>
         <div class="contents">
-          <%= f.label :content, 'メモ内容記入フォーム', class:'content' %>
-          <%= f.text_area :content, id:'memo-content', class:'memo-content' %>
+          <%= f.label :action_text, 'メモ内容記入フォーム', class:'content' %>
+          <%= f.rich_text_area :action_text, id:'memo-content', class:'memo-content' %>
         </div>
       <% end %>
     </div>

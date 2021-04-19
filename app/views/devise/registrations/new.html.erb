@@ -9,6 +9,7 @@
     <div class="devise-content">
       <div class='signup-title'>
         <h2>Sign up</h2>
+        <%= link_to 'ログインはこちら', new_user_session_path %>
       </div>
       <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
         <div class="signup-field">
