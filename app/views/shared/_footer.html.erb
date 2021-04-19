@@ -24,7 +24,7 @@
     <div class='furima-details'>
       <h2 class='footer-content-head'>My Noteを見る</h2>
       <ul>
-        <li><%= link_to '会員情報', "#", class: "footer-link" %></li>
+        <li><%= link_to '会員情報', edit_user_path(current_user.id), class: "footer-link" %></li>
         <li><%= link_to '', "#", class: "footer-link" %></li>
       </ul>
     </div>

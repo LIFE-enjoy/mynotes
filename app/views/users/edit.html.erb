@@ -1,0 +1,38 @@
+<div class='devise-body'>
+  <div class="devise-top">
+    <div class="devise-menu">
+      <div>ようこそ</div>
+    </div>
+    <div class="devise-content">
+      <div class='signup-title'>
+        <h2>Edit</h2>
+      </div>
+      <%= form_with model: current_user, url: user_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+        <div class="signup-field">
+          <%= f.label :nickname %> <br />
+          <%= f.text_field :nickname, autofocus: true %>
+        </div>
+
+        <div class="signup-field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Edit", class:'submit-btn' %>
+        </div>
+      <% end %>
+        <div class="actions">
+          <%= button_to '戻る', {controller: 'notes', action: 'index'}, method: :get, class:'back-btn' %>
+        </div>
+    </div>
+
+  <%# フェードインアクション %>
+    <%# <div class="start">
+      <div class='start-log'>
+        <%= image_tag "note.png" 
+        <h1>My Notes</h1>
+      </div>
+    </div> %>
+  </div> 
+</div> 

@@ -94,13 +94,22 @@
 
 .actions{
   display: flex;
+  flex-direction: column;
   margin-top: 2vh;
   margin-left: 4vw;
+}
+
+.back-btn{
+  width: 100px;
+  height: 38px;
+  margin-top: 1vh;
+  margin-left: 13px;
 }
 
 .submit-btn{
   width: 100px;
   height: 38px;
+  margin-top: 5vh;
 }
 
 .devise-error{
