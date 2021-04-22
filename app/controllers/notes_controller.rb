@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_action :set_index, only: [:index, :new, :edit, :show]
+  before_action :set_index, only: [:index, :new, :edit]
   before_action :set_note, only: [:edit, :update,:destroy]
 
   def index
@@ -14,10 +14,6 @@ class NotesController < ApplicationController
   end
 
   def edit
-  end
-
-  def show
-    
   end
 
   def update
