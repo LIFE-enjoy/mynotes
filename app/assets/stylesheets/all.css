@@ -1,0 +1,74 @@
+.back-body{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('wood.jpeg');
+  background-size: 100% 100%;
+}
+
+
+.book{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-image:url('top_note.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.book-main{
+  width: 95%;
+  background-color: rgb(255, 248, 187);
+}
+}
+
+.book-left{
+  height: 80%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  background-color: rgb(255, 248, 187);
+}
+
+.memo-title{
+  padding: 1vh;
+  border: none;
+  line-height: 1.2;
+  outline: none;
+  font-size: 25px;
+  background-color: rgb(255, 248, 187);
+}
+
+.book-right{
+  height: 80%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(107, 104, 75);
+}
+
+.memo-contents{
+  background-color: rgb(255, 248, 187);
+  height: 100%;
+  margin: -20px 30px 0 25px;
+  display: flex;
+  flex-direction: column;
+  border-bottom:rgb(209, 209, 198) 3px dashed;
+}
+
+.memo-content{
+  height: 100%;
+  resize: none;
+  padding: 1vh;
+  border: none;
+  line-height: 1.2;
+  outline: none;
+  background-color: #fff8bb;
+  overflow: scroll;
+}
