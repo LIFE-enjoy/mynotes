@@ -1,5 +1,6 @@
 function inputTitle() {
   const titleEl = document.getElementById("memo-title");
+  if (!titleEl){ return false;}
   titleEl.addEventListener('input', () => {
     const inputValue= titleEl.value
     const indexTitle = document.querySelectorAll("memo-index");
@@ -9,6 +10,7 @@ function inputTitle() {
 
 function saveText(){
   const form = document.getElementById('text-content')
+  if (!form){ return false;}
   form.addEventListener('change', (e) => {
     e.preventDefault();
 
@@ -19,16 +21,6 @@ function saveText(){
     XHR.open("POST", `${formAction}`, true);
     XHR.responseType = "json";
     XHR.send(formData);
-  });
-};
-
-function autoText (){
-  const textarea = document.getElementById('memo-content');
-  textarea.addEventListener('input',() => {
-    const clientHeight = textarea.clientHeight;
-    textarea.style.height = clientHeight + 'px';
-    const scrollHeight = textarea.scrollHeight;
-    textarea.style.height = scrollHeight + 'px';
   });
 };
 

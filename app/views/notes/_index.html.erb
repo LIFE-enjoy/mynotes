@@ -17,7 +17,7 @@
       </ul>
     </div>
   </ul>
-  <div class='memo-link'>
+  <div class='memo-link',id='memo-link'>
     <% @notes.each do |note| %>
         <%= link_to edit_note_path(note.id) do %>
           <div class="memo-index",id='memo-index'>

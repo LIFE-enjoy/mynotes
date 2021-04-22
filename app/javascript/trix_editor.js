@@ -1,5 +1,6 @@
 function trixSave() {
   const trixText = document.getElementById("text-content");
+  if (!trixText){ return false;}
   trixText.addEventListener('trix-change', (e) => {
     e.preventDefault();
     const formResult = document.getElementById('text-content')

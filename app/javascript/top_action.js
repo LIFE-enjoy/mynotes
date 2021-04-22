@@ -1,6 +1,6 @@
 function topAction(){
   const topLog = document.querySelectorAll('.start-log')
-  topLog.classList.add('fadein');
+  if (!topLog){ return false;}
 }
 
 window.addEventListener('load',topAction)

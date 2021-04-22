@@ -11,8 +11,8 @@
           <li><%= link_to '今日は終わり', destroy_user_session_path, method: :delete, class: "logout" %></li>
         </ul>
         <div class='search-bar-contents'>
-          <form class="search-form" action="#">
-            <input class='input-box' placeholder='メモを探す'>
+          <form class="search-form">
+            <input class='input-box', id='search-box', placeholder='メモを探す'>
             <button class="search-button">
               <%= image_tag "search.png", class:"search-icon" %>
             </button>
