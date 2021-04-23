@@ -1,19 +1,19 @@
-<div class='devise-body'>
-  <div class="devise-top">
-    <div class="devise-menu">
+<div class='book-body'>
+  <div class="book-top">
+    <div class="book-left">
       <div>ようこそ</div>
     </div>
-    <div class="devise-content">
-      <div class='signup-title'>
+    <div class="book-right">
+      <div class='title'>
         <h2>Edit</h2>
       </div>
       <%= form_with model: current_user, url: user_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-        <div class="signup-field">
+        <div class="field">
           <%= f.label :nickname %> <br />
           <%= f.text_field :nickname, autofocus: true %>
         </div>
 
-        <div class="signup-field">
+        <div class="field">
           <%= f.label :email %><br />
           <%= f.email_field :email %>
         </div>
@@ -23,7 +23,7 @@
         </div>
       <% end %>
         <div class="actions">
-          <%= button_to '戻る', {controller: 'notes', action: 'index'}, method: :get, class:'back-btn' %>
+          <%= button_to '戻る', {controller: 'notes', action: 'edit'}, method: :get, class:'back-btn' %>
         </div>
     </div>
 

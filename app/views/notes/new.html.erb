@@ -1,26 +1,22 @@
-<%= render "shared/header" %>
-
-<div class="body">
-<%# 左側 %>
-  <%= render "index" %>
-<%# 右側 %>
-  <div class="right">
-    <div class="toolbar">
-      <%= render "toolbar" %>
+<div class='book-body'>
+  <div class="book-top">
+    <div class="book-left">
+      <%= render "index" %>
     </div>
-    <div class="views">
-      <%= form_with model: @note, url: note_path(@note.id), id:'text-content', local: true do |f| %>
-        <div class="contents">
-          <%= f.label :title, 'メモタイトル記入フォーム', class:'title' %>
-          <%= f.text_field :title, id:'memo-title', class:'memo-title' %>
-        </div>
-        <div class="contents">
-          <%= f.label :action_text, 'メモ内容記入フォーム', class:'content' %>
-          <%= f.rich_text_area :action_text, id:'memo-content', class:'memo-content' %>
-        </div>
-      <% end %>
+    <div class="book-right">
+      <div class="views">
+        <%= form_with model: @note, url: note_path(@note.id), id:'text-content', local: true do |f| %>
+          <div class="title-contents">
+            <%= f.text_field :title, id:'memo-title', class:'memo-title' %>
+          </div>
+          <div class="text-contents">
+            <%= f.rich_text_area :action_text, id:'memo-content', class:'memo-content' %>
+          </div>
+        <% end %>
+      </div>
+      <div class="toolbar">
+        <%= render "toolbar" %>
+      </div>
     </div>
-  </div>
-</div>
-
-<%= render "shared/footer" %>
+  </div> 
+</div> 

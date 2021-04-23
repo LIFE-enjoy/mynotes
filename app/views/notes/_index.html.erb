@@ -1,25 +1,22 @@
+<div class='user-info'>
+</div>
 <div class="memo-left">
   <ul>
-    <div class="folder">
-      <div class="folder-title">
-        <h4>フォルダ</h4>
-        <%= image_tag 'folder.png', class:"folder-image" %>
-      </div>
-      <ul class="folder-links">
-        <li>
-          <%= link_to "フォルダを追加", '#', class:'folder-link' %>
-          <% @notes.each do |note| %>
-            <%= link_to '#', class:'folder-link' do %>
-              <div class="folder-index"><%= note.title %></div>
-            <% end %>
-          <% end %>
-        </li>
-      </ul>
+    <div class='search-bar-contents'>
+      <form class="search-form">
+        <input class='input-box', id='search-box', placeholder='メモを探す'>
+        <button class="search-button">
+          <%= image_tag "search.png", class:"search-icon" %>
+        </button>
+      </form>
+    </div>
+    <div class='new-memo'>
+      <%= link_to image_tag('new.png', class:'toolbtn', title:'メモの新規作成'),new_note_path %>
     </div>
   </ul>
   <div class='memo-link',id='memo-link'>
     <% @notes.each do |note| %>
-        <%= link_to edit_note_path(note.id) do %>
+        <%= link_to edit_note_path(note.id), class:'memo-indexs' do %>
           <div class="memo-index",id='memo-index'>
             <%= note.title %>
           </div>

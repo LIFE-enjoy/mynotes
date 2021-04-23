@@ -1,9 +1,9 @@
-<div class="tools">ツールバー</div> 
+
   <div class="tools">
-    <%= link_to image_tag 'shape.png', class:'toolbtn' %>
+    <%= link_to image_tag('exit.png', class:'toolbtn',title:'ログアウト'), destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか？' } %>
   </div>
   <div class="tools">
-    <%= link_to image_tag 'marker.png', class:'toolbtn' %>
+    <%= link_to image_tag('user.png', class:'toolbtn', title:'会員情報編集'),edit_user_path(current_user.id) %>
   </div>
   <div class="tools">
     <%= link_to image_tag 'clip.png', class:'toolbtn' %>
@@ -12,5 +12,5 @@
     <%= link_to image_tag 'share-btn.png', class:'toolbtn' %>
   </div>
   <div class="tools">
-    <%= link_to image_tag('garbage-box.png', class:'toolbtn'),note_path(@note.id), method: :delete, data: { confirm: 'メモを削除しますか？' } %>
+    <%= link_to image_tag('garbage-box.png', class:'toolbtn',title:'メモを削除'),note_path(@note.id), method: :delete, data: { confirm: 'メモを削除しますか？' } %>
 </div>

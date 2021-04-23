@@ -33,12 +33,6 @@
   color: #FFF;
 }
 
-.add-list {
-  text-decoration: none;
-  margin-right: 3vw;
-  color: #FFF;
-}
-
 .right-nav{
   display: flex;
 }
@@ -98,7 +92,7 @@
   width: 5vh;
   border: 0;
   cursor: pointer;
-  background-color: #3ccace;
+  background-color:black;
   padding: 8px;
 }
 

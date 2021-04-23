@@ -1,28 +1,28 @@
-<div class='devise-body'>
-  <div class="devise-top">
-    <div class="devise-menu">
+<div class='book-body'>
+  <div class="book-top">
+    <div class="book-left">
       <div>ようこそ</div>
       <div class='devise-error'>
         <%= devise_error_messages! %>
       </div>
     </div>
-    <div class="devise-content">
-      <div class='signup-title'>
+    <div class="book-right">
+      <div class='title'>
         <h2>Sign up</h2>
         <%= link_to 'ログインはこちら', new_user_session_path %>
       </div>
       <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-        <div class="signup-field">
+        <div class="field">
           <%= f.label :nickname %> <br />
           <%= f.text_field :nickname, autofocus: true %>
         </div>
 
-        <div class="signup-field">
+        <div class="field">
           <%= f.label :email %><br />
           <%= f.email_field :email %>
         </div>
 
-        <div class="signup-field">
+        <div class="field">
           <%= f.label :password %>
           <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -30,7 +30,7 @@
           <%= f.password_field :password, autocomplete: "off" %>
         </div>
 
-        <div class="signup-field">
+        <div class="field">
           <%= f.label :password_confirmation %><br />
           <%= f.password_field :password_confirmation, autocomplete: "off" %>
         </div>
@@ -42,11 +42,11 @@
     </div>
 
   <%# フェードインアクション %>
-    <%# <div class="start">
+     <div class="start">
       <div class='start-log'>
-        <%= image_tag "note.png" 
+        <%= image_tag "note.png" %>
         <h1>My Notes</h1>
       </div>
-    </div> %>
+    </div>
   </div> 
 </div> 
