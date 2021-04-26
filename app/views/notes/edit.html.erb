@@ -6,10 +6,10 @@
     <div class="book-right">
       <div class="views">
         <%= form_with model: @note, url: note_path(@note.id), id:'text-content', local: true do |f| %>
-          <div class="contents">
+          <div class="title-contents">
             <%= f.text_field :title, id:'memo-title', class:'memo-title' %>
           </div>
-          <div class="contents">
+          <div class="text-contents">
             <%= f.rich_text_area :action_text, id:'memo-content', class:'memo-content' %>
           </div>
         <% end %>

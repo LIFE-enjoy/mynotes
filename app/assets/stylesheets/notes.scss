@@ -164,8 +164,8 @@
   position: relative;
   transition: color 300ms, background-color 300ms;
   &:hover{
-    background-color: rgb(154, 157, 165);
-    color: #fff;
+    box-shadow: 0 3px 8px black;
+    transform: translate(0, -5px);
   }
 }
 
@@ -247,6 +247,7 @@
   align-items: center;
   margin-top: 10vh;
 }
+
 
 .title{
   width: 60%;

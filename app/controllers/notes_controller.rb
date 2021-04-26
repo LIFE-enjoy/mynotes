@@ -15,7 +15,7 @@ class NotesController < ApplicationController
 
   def edit
   end
-
+  
   def update
     @note.update(note_params)
     redirect_to action: :edit
