@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
   before_action :set_index, only: [:index, :new, :edit]
-  before_action :set_note, only: [:edit, :update,:destroy]
+  before_action :set_note, only: [:edit, :update, :destroy]
+  before_action :move_index, except: :index
 
   def index
   end
@@ -14,11 +15,16 @@ class NotesController < ApplicationController
   end
 
   def edit
+    
   end
   
   def update
-    @note.update(note_params)
-    redirect_to action: :edit
+    if @note.user.id == current_user.id
+      @note.update(note_params)
+      redirect_to action: :edit
+    else
+      redirect_to action: :edit
+    end
   end
 
   def destroy
@@ -32,17 +38,20 @@ class NotesController < ApplicationController
     render json:{ keyword: note }
   end
 
-
   private
   def note_params
     params.require(:note).permit(:title, :content,:action_text).merge(user_id: current_user.id)
   end
 
   def set_index
-    @notes = Note.all.order(id: "DESC")
+    @notes = Note.where(user_id: current_user.id).order(id: "DESC")
   end
 
   def set_note
     @note = Note.find(params[:id])
+  end
+
+  def move_index
+    redirect_to action: :index if current_user.id != @note.user.id
   end
 end

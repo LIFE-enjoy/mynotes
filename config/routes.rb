@@ -2,9 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root 'notes#index'
   resources :notes do
-    collection do
-      get 'search'
-    end
+    resources :comments
   end
   resources :users, only: [:edit, :update, :destroy]
+  mount ActionCable.server, at: '/cable'
 end

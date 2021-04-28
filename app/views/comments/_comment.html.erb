@@ -1,0 +1,14 @@
+<div class="comment">
+  <div class="comment-user">
+    <%= comment.user.nickname %>
+    <%= image_tag 'user.png', class:'toolbtn' %>
+  </div>
+  <div class="lower-comment">
+    <div class="comment-date">
+        <%= l comment.created_at %>
+    </div>
+    <div class="comment-content">
+      <%= safe_join(comment.content.split("\n"),tag(:br)) %>
+    </div>
+  </div>
+</div>
