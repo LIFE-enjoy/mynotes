@@ -18,11 +18,9 @@ const commentRoom = consumer.subscriptions.create("CommentChannel", {
 });
 
 $(function(){
-    $('#comment-text').on('keypress', function(e) {
-    if (e.key === 'Enter'){
-      commentRoom.speak([e.target.value, $('[data-user]').attr('data-user'), $('[data-note]').attr('data-note')]);
-      e.target.value = '';
+    $('#comment-btn').on('click', function(e) {
+      commentRoom.speak([$('#comment-text').val(), $('[data-user]').attr('data-user'), $('[data-note]').attr('data-note')]);
+      $('#comment-text').val('');
       return e.preventDefault();
-    }
   });
 });

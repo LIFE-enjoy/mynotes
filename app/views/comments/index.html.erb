@@ -4,11 +4,9 @@
       <div class="contents-row" id='contents-row'>
           <%= render @comments %>
       </div>
-      <div class="container">
-        <%= form_with class:'comment-container', local: true do |form| %>
-        <%= form.text_area :content, placeholder: "コメントする", class:'comment-text',id:"comment-text" %>
-        <%= form.submit "SEND", class:'comment-btn',id:'comment-btn' %>
-        <% end %>
+      <div class="comment-container">
+        <textarea id="comment-text" class='comment-text' name="content" placeholder="コメントする" cols="50em" rows="1" wrap="hard"></textarea>
+        <input type="button" value="送信" class='comment-btn' id='comment-btn' >
         <input type="hidden" data-behavior="comment_speaker" data-user="<%= current_user.id %>" data-note="<%= @note.id %>">
       </div>
     </div>
@@ -22,6 +20,9 @@
             <%= f.rich_text_area :action_text, id:'memo-content', class:'memo-content' %>
           </div>
         <% end %>
+      </div>
+      <div class="toolbar-comment">
+        <%= render "toolbar_comment" %>
       </div>
     </div>
   </div> 
