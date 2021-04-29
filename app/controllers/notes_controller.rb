@@ -7,7 +7,7 @@ class NotesController < ApplicationController
   end
 
   def new
-    @note = Note.create(title: '新規メモ', content: '', user_id: current_user.id)
+    @note = Note.create(title: '新規メモ', user_id: current_user.id)
   end
 
   def create
