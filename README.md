@@ -4,7 +4,7 @@
 このアプリケーションは学習用のメモアプリケーションです。
 
 # URL
-
+https://mynotes-app35013.herokuapp.com/
 
 # テスト用アカウント
 アプリケーション内でゲストユーザーを選択してください。
@@ -58,27 +58,57 @@
 
 # 実装した機能について
 ## 新規登録
+[![Image from Gyazo](https://i.gyazo.com/0a42a17c6838aaf3cd58eedcd2d88782.gif)](https://gyazo.com/0a42a17c6838aaf3cd58eedcd2d88782)
+
+Nickname、Email、passwordと入力すると新規登録が完了します。
 
 ## ログイン
+[![Image from Gyazo](https://i.gyazo.com/f34178bbc728a8858ad73dd005ff0a6b.gif)](https://gyazo.com/f34178bbc728a8858ad73dd005ff0a6b)
+
+登録したユーザのEmailとPasswordを入力するとログインできます。
 
 ## ユーザ情報編集
 
+[![Image from Gyazo](https://i.gyazo.com/75e2da68c03c71a04f7d93ddfc3f5af8.gif)](https://gyazo.com/75e2da68c03c71a04f7d93ddfc3f5af8)
+
+こちらのようにツールバーのアイコンをクリックしてユーザ情報編集ページに遷移するとNicknameとEmailが編集できます。
+
 ## 新規メモ作成
+[![Image from Gyazo](https://i.gyazo.com/de1fce90fa3967180ce39ebfb7cca9ac.gif)](https://gyazo.com/de1fce90fa3967180ce39ebfb7cca9ac)
+
+こちらの新規メモ作成のアイコンをクリックすると新規メモが作成できます。
 
 ## メモ一覧
+[![Image from Gyazo](https://i.gyazo.com/0c91ef7fee5d6c09f3344df31209f8ff.gif)](https://gyazo.com/0c91ef7fee5d6c09f3344df31209f8ff)
+
+作成したメモは左側に一覧表示されます。
 
 ## メモ検索
+[![Image from Gyazo](https://i.gyazo.com/761face314261bf63ed93ec6f6f5c5ac.gif)](https://gyazo.com/761face314261bf63ed93ec6f6f5c5ac)
+
+左側上部の検索バーを使えば、動画のように動的にメモを検索できます。
 
 ## メモ編集
+[![Image from Gyazo](https://i.gyazo.com/aae4c73a4fc14a903e3046f15f153a11.gif)](https://gyazo.com/aae4c73a4fc14a903e3046f15f153a11)
+
+メモを編集し保存する際はこのように自動保存・更新されます。
 
 ## メモ削除
+[![Image from Gyazo](https://i.gyazo.com/b23935782979ac58e7a23c8b3cd3366d.gif)](https://gyazo.com/b23935782979ac58e7a23c8b3cd3366d)
 
-## メモ編集
+このように右下のゴミ箱のアイコンをクリックするとメモを削除できます。
 
 ## 画像添付
+[![Image from Gyazo](https://i.gyazo.com/548e439f6a26898770f490f050d7b599.gif)](https://gyazo.com/548e439f6a26898770f490f050d7b599)
+
+このように画像も添付することができます。
 
 ## チャット
+[![Image from Gyazo](https://i.gyazo.com/2a46e538b972e61b2ec38e3d1e3a968f.gif)](https://gyazo.com/2a46e538b972e61b2ec38e3d1e3a968f)
 
+[![Image from Gyazo](https://i.gyazo.com/a7f81c16d25e137a285ef506fe7d205e.gif)](https://gyazo.com/a7f81c16d25e137a285ef506fe7d205e)
+
+ツールバーのチャットのアイコンをクリックすると、そのメモに対してチャットをすることができます。
 
 # テーブル設計
 ## ER図
