@@ -61,6 +61,7 @@ gem 'actiontext'
 gem 'pry-rails'
 gem 'devise'
 gem 'mini_magick'
+gem "aws-sdk-s3", require: false
 
 group :development do
   gem 'rubocop', require: false
