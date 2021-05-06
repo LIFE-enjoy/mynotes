@@ -1,3 +1,82 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-avatar{
+  border-radius: 50%; 
+  width:  250px;
+  height: 250px;
+  background-color:snow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  margin-left: 10px;
+}
+
+.avatar{
+  overflow: hidden;
+}
+
+.avatar-none{
+  height: 60%;
+}
+
+.user-nickname{
+  width: 80%;
+  font-size: 30px;
+  border-bottom: rgb(201, 165, 121) 2px solid;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-tools{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.user-toolbtn{
+  height: 4vh;
+  width: 2vw;
+  margin-left: 15px;
+}
+
+.notification{
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.user-profile{
+  width: 80%;
+  height: 80%;
+  margin: 15px;
+  overflow: scroll;
+}
+
+.field{
+  margin: 10px;
+}
+
+.edit_user{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-field{
+  width: 100%;
+  padding: 10px;
+}
+
+.edit-avatar{
+  display: none;
+}
+
+.user-plusbtn{
+  width: 100px;
+  cursor: pointer;
+}

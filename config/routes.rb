@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :notes do
     resources :comments, only: :index
   end
-  resources :users, only: [:edit, :update, :destroy]
+  resources :users, only: [:show, :edit, :update, :destroy]
   mount ActionCable.server, at: '/cable'
 
   devise_scope :user do

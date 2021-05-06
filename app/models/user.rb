@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :notes
   has_many :comments
+  has_one_attached :avatar
 
   validates :nickname, presence: true
 

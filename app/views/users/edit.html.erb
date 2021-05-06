@@ -1,12 +1,18 @@
 <div class='book-body'>
   <div class="book-top">
     <div class="book-left">
+    <%= form_with model: @user, url: user_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+      <div class='user-avatar'>
+        <label> 
+          <%= image_tag 'user_plus.png', class:'user-plusbtn' %>
+          <%= f.file_field :avatar,class:'edit-avatar' %>
+        </label>
+      </div>
     </div>
     <div class="book-right">
       <div class='title'>
         <h2>Edit</h2>
       </div>
-      <%= form_with model: current_user, url: user_path, id: 'new_user', class: 'new_user', local: true do |f| %>
         <div class="field">
           <%= f.label :nickname %> <br />
           <%= f.text_field :nickname, autofocus: true %>
@@ -17,6 +23,11 @@
           <%= f.email_field :email %>
         </div>
 
+        <div class="field">
+          <%= f.label :profile %><br />
+          <%= f.text_area :profile, size: "40x5", class:'profile-field' %>
+        </div>
+
         <div class="actions">
           <%= f.submit "Edit", class:'submit-btn' %>
         </div>
@@ -25,13 +36,5 @@
           <%= button_to '戻る', {controller: 'notes', action: 'index'}, method: :get, class:'back-btn' %>
         </div>
     </div>
-
-  <%# フェードインアクション %>
-    <%# <div class="start">
-      <div class='start-log'>
-        <%= image_tag "note.png" 
-        <h1>My Notes</h1>
-      </div>
-    </div> %>
   </div> 
 </div> 
