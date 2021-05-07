@@ -1,8 +1,10 @@
 class CommentsController < ApplicationController
   def index
     @note = Note.find(params[:note_id])
-    @comments = Comment.where(note_id: @note.id).order(id: 'DESC')
     @comment = Comment.new
+    @other_user = User.includes(:comments)
+    @user = current_user
+    @comments = Comment.where(note_id: @note.id).order(id: 'DESC')
   end
 
   private

@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2021_04_26_025222) do
     t.text "content", null: false
     t.bigint "note_id"
     t.bigint "user_id"
+    t.integer "other_user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["note_id"], name: "index_comments_on_note_id"

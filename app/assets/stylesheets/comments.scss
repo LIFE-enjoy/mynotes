@@ -1,3 +1,106 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+.comment{
+  display: flex;
+}
+
+.comment-user{
+  display: flex;
+  font-size: 10px;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.comment-left{
+  display: flex;
+  align-items: center;
+}
+
+.user-info{
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-right{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.my-comments{
+  text-align: right;
+}
+
+.my-comments{
+  text-align: left;
+  position: relative;
+  display: inline-block;
+  margin: 5px 15px 0 15px;
+  padding: 7px 10px;
+  min-width: 70px;
+  max-width: 60%;
+  color: #555;
+  font-size: 16px;
+  background: #c3cddb;
+  border-radius: 15px;
+}
+
+.my-comments:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -25px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 15px solid #c3cddb;
+  transform: rotate(180deg);
+}
+
+.other-comment{
+  position: relative;
+  display: inline-block;
+  margin: 1em 0 0 15px;
+  padding: 10px 10px;
+  min-width: 100px;
+  max-width: 70%;
+  color: #555;
+  font-size: 16px;
+  background: #c3cddb;
+  border-radius: 15px;
+}
+
+.other-comment:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -24px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 15px solid #c3cddb;
+}
+
+.comment-content{
+  margin-left: 3px;
+}
+
+.comment-date{
+  font-size: 10px;
+}
+
+
+.toolbar-comment{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 3%;
+  width: 90%;
+  box-sizing: border-box;
+  border-bottom:rgb(209, 209, 198) 3px solid;
+  padding: 2vw;
+}

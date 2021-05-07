@@ -1,7 +1,7 @@
 class CommentChannel < ApplicationCable::Channel
   def subscribed
     stream_from 'comment_channel'
-    stream_for current_user
+    stream_for current_user.id
   end
 
   def unsubscribed
