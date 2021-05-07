@@ -44,13 +44,14 @@
 }
 
 .index-views{
-  height: 50%;
+  height: 92%;
 }
 
 .title-contents{
+  width: 95%;
   height: auto;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   border-bottom:rgb(209, 209, 198) 3px dashed;
 }
 

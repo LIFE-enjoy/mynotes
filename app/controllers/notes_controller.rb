@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
   before_action :set_index, only: [:index, :new, :edit]
   before_action :set_note, only: [:edit, :update, :destroy]
+  before_action :set_user, only: [:index, :new, :edit]
   before_action :move_index, except: [:index, :new]
 
   def index
@@ -51,6 +52,10 @@ class NotesController < ApplicationController
 
   def set_note
     @note = Note.find(params[:id])
+  end
+
+  def set_user
+    @user = current_user
   end
 
   def move_index

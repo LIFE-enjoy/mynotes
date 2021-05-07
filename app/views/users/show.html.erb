@@ -22,7 +22,7 @@
         <div class='notification'>
         </div>
         <div class="user-profile">
-          <%= safe_join(@user.profile.split("\n"),tag(:br))%>
+          <%= safe_join(@user.profile.split("\n"),tag(:br)) if @user.profile.present? %>
         </div>
         <div class="actions">
           <%= button_to '戻る', {controller: 'notes', action: 'index'}, method: :get, class:'back-btn' %>

@@ -6,12 +6,22 @@
   border-radius: 50%; 
   width:  250px;
   height: 250px;
-  background-color:snow;
+  background-color: #e8dfd6;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 100px;
   margin-left: 10px;
+}
+
+.user-icon{
+  border-radius: 50%; 
+  width:  35px;
+  height: 35px;
+  background-color: #e8dfd6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .avatar{

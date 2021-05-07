@@ -121,6 +121,7 @@ Nickname、Email、passwordと入力すると新規登録が完了します。
 | nickname           | string | NOT NULL |
 | email              | string | NOT NULL |
 | encrypted_password | string | NOT NULL |
+| profile            | text   |          |
 
 
 ### Association
