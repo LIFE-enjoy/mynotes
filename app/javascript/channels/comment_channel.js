@@ -10,7 +10,6 @@ const commentRoom = consumer.subscriptions.create("CommentChannel", {
   },
 
   received: function(data) {
-    debugger
     $('#contents-row').prepend(data['message']);
   },
   speak: function(comment) {

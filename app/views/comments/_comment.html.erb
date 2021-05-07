@@ -1,35 +1,18 @@
 <div class="comment">
   <div class="comment-user">
-    <% if comment.user_id == @user.id %>
-    <div class='comment-right'>
-      <div class='my-comments'>
-        <div class="comment-date">
-            <%= l comment.created_at %>
-        </div>
-        <div class="my-comment">
-          <%= safe_join(comment.content.split("\n"),tag(:br)) %>
-        </div>
-      </div>
-    </div>
+    <%= comment.user.nickname %>
+    <% if comment.user.avatar.attached? %>
+    <%= link_to image_tag(comment.user.avatar, class:'user-icon'),user_path(comment.user_id) %>
     <% else %>
-    <div class='comment-left'>
-      <div class='user-info'>
-        <%= comment.user.nickname %>
-        <% if comment.user.avatar.attached? %>
-          <%= link_to image_tag(comment.user.avatar, class:'user-icon'),user_path(comment.user_id) %>
-        <% else %>
-          <%= link_to image_tag('user.png', class:'user-icon'),user_path(comment.user_id) %>
-        <% end %>
-      </div>
-      <div class="other-comment">
-        <div class="comment-date">
-            <%= l comment.created_at %>
-        </div>
-        <div class="comment-content">
-          <%= safe_join(comment.content.split("\n"),tag(:br)) %>
-        </div>
-      </div>
+    <%= link_to image_tag('user.png', class:'user-icon'),user_path(comment.user_id) %>
+    <% end %>
+  </div>
+  <div class="lower-comment">
+    <div class="comment-date">
+        <%= l comment.created_at %>
     </div>
-    <% end %>  
+    <div class="comment-content">
+      <%= safe_join(comment.content.split("\n"),tag(:br)) %>
+    </div>
   </div>
 </div>
