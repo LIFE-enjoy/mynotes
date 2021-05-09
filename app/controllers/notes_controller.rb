@@ -3,6 +3,7 @@ class NotesController < ApplicationController
   before_action :set_note, only: [:edit, :update, :destroy]
   before_action :set_user, only: [:index, :new, :edit]
   before_action :move_index, except: [:index, :new]
+  before_action :receive_notification, only: [:index, :new, :edit]
 
   def index
   end
@@ -60,5 +61,9 @@ class NotesController < ApplicationController
 
   def move_index
     redirect_to action: :index if current_user.id != @note.user.id
+  end
+
+  def receive_notification
+    @receive_notification = Notification.where(note_id: params[:id], checked: false).count
   end
 end

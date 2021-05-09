@@ -46,8 +46,20 @@
   z-index: 500;
 }
 
-
 .notification-mark{
   width: 0;
   height: 0;
+}
+
+.notification-count{
+
+  background-color: rgb(206, 67, 24);
+  color:white;
+  border-radius: 50%;
+  text-align: center;
+  position: absolute;
+  top: -10px;
+  right: -18px;
+  z-index: 500;
+  width: 20px;
 }
