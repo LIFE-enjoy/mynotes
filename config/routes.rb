@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'notes#index'
   resources :notes do
-    resources :comments, only: [:index, :create]
+    resources :comments, only: [:index, :create, :destroy]
   end
   resources :users, only: [:show, :edit, :update, :destroy]
   resources :notifications, only: [:index, :destroy] do

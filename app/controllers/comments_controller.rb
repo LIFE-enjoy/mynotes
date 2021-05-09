@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
 
   def index
+    @user = current_user
     @note = Note.find(params[:note_id])
     @comments = Comment.where(note_id: @note.id).order(id: 'DESC')
     @comment = Comment.new
@@ -12,6 +13,16 @@ class CommentsController < ApplicationController
   end
 
   def create
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    if @comment.destroy
+      redirect_to note_comments_path, notice: 'コメントを削除しました'
+    else
+      flash.now[:alert] = 'コメント削除に失敗しました'
+      render note_comments_path
+    end
   end
 
   private

@@ -13,6 +13,7 @@
     </div>
     <div class="comment-content">
       <%= safe_join(comment.content.split("\n"),tag(:br)) %>
+      <%= link_to image_tag('garbage-box.png', class:'comment-toolbtn'),note_comment_path(@note, comment.id), method: :delete, data: { confirm: 'コメントを削除しますか？' } %>
     </div>
   </div>
 </div>

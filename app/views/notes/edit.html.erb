@@ -8,9 +8,6 @@
         <%= form_with model: @note, url: note_path(@note.id), id:'text-content', local: true do |f| %>
           <div class="title-contents">
             <%= f.text_field :title, id:'memo-title', class:'memo-title' %>
-            <% if unchecked_notifications.any? %>
-              <i class="fa fa-circle" style="color: gold;"></i>
-            <% end %>
             <% if @user.avatar.attached? %>
               <%= link_to image_tag(@user.avatar, class:'user-icon'),user_path(@note.user_id) %>
             <% else %>
