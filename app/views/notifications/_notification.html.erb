@@ -1,0 +1,21 @@
+<% visiter = notification.visiter %>
+<% note = notification.note %>
+
+<div class="notification-view">
+  <%= link_to user_path(notification.visited) do %>
+    <% if notification.visiter.avatar.attached? %>
+      <%= link_to image_tag(notification.visiter.avatar, class:'user-icon'),user_path(notification.visiter_id) %>
+    <% else %>
+      <div class='user-icon'>
+        <%= link_to image_tag('user.png', class:'user-icon'),user_path(notification.visiter_id) %>
+      </div>
+    <% end %>
+  <% end %>
+  <div class='notification-infos'>
+    <%= notification_form(notification) %><span class="notification-time"><%= " (#{time_ago_in_words(notification.created_at)} 前)" %></span>
+    <br>
+    <% if !@comment.nil? %>
+      <p class="notification-comment"><%= @comment %></p>
+    <% end %>
+  </div>
+</div>

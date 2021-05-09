@@ -12,7 +12,7 @@
               <%= link_to image_tag(@user.avatar, class:'user-icon'),user_path(@note.user_id) %>
             <% else %>
               <div class='user-icon'>
-                <%= link_to image_tag('user.png', class:'avatar-none'),user_path(@note.user_id) %>
+                <%= link_to image_tag('user.png', class:'user-icon'),user_path(@note.user_id) %>
               </div>
             <% end %>
           </div>

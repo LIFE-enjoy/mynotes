@@ -51,6 +51,17 @@
   margin-left: 15px;
 }
 
+.user-tools .notification-mark::after{
+  content: "●";
+  color: rgb(206, 67, 24);
+  position: relative;
+  top: -20px;
+  right: -32px;
+  font-size: 16px;
+  text-shadow: 0px 0px 2p rgb(206, 67, 24);
+  z-index: 500;
+}
+
 .notification{
   width: 80%;
   display: flex;

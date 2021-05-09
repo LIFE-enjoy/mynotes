@@ -16,7 +16,10 @@
           <%= @user.nickname %>
           <div class='user-tools'>  
             <%= link_to image_tag('edit_button.png', class:'user-toolbtn', title:'ユーザ情報を編集する'),edit_user_path(current_user.id) %>
-            <%= link_to image_tag('notification.png', class:'user-toolbtn', title:'通知を見る'),edit_user_path(current_user.id) %>
+            <% if unchecked_notifications.any? %>
+              <div class='notification-mark'></div>
+            <% end %>
+            <%= link_to image_tag('notification.png', class:'user-toolbtn', title:'通知を見る'), notifications_path %>
           </div>
         </div>
         <div class='notification'>

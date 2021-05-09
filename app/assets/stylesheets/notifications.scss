@@ -1,0 +1,53 @@
+// Place all the styles related to the notifications controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.delete-all{
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.notifications{
+  text-align: center;
+  width: 80%;
+  height: 80%;
+  margin: 15px;
+  overflow: scroll;
+}
+
+.user-index{
+
+}
+
+.notification-view{
+  display: flex;
+  align-items: center;
+
+}
+
+.notification-infos{
+  display: block;
+  margin: 10px;
+}
+
+.notification-comment{
+  color: rgb(114, 24, 24);
+  font-weight: bold;
+}
+
+.tools .notification-mark::after{
+  content: "●";
+  color: rgb(206, 67, 24);
+  position: relative;
+  top: -10px;
+  right: -18px;
+  text-shadow: 0px 0px 2p rgb(206, 67, 24);
+  z-index: 500;
+}
+
+
+.notification-mark{
+  width: 0;
+  height: 0;
+}

@@ -1,0 +1,35 @@
+<div class='book-body'>
+  <div class="book-top">
+    <div class="book-left">
+      <% if current_user.avatar.attached? %>
+          <%= image_tag(current_user.avatar, class:'user-avatar') %>
+      <% else %>
+        <div class='user-avatar'>
+           <%= image_tag 'user.png', class:'avatar-none' %>
+        </div>
+      <% end %>
+    </div>
+    <div class="book-right">
+       <div class='title'>
+            <h2>Notifications</h2>
+        </div>
+        <div class='delete-all'>
+          <%= link_to image_tag('garbage-box.png', class:'toolbtn'), destroy_all_notifications_path ,data: { confirm: '通知を全てを削除しますか？' } %>
+        </div>
+          <div class='notifications'>
+            <% if @notifications.exists? %>
+                <div class="users-index">
+                    <%= render @notifications %>
+                </div>
+            <% else %>
+              <div class="users-index">
+                <p>通知はありません</p>
+              </div>
+            <% end %>
+          </div>
+        <div class="actions">
+          <%= button_to '戻る', {controller: 'notes', action: 'index'}, method: :get, class:'back-btn' %>
+        </div>
+    </div>
+  </div> 
+</div> 

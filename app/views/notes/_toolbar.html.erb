@@ -10,7 +10,10 @@
     <%= link_to image_tag('chat.png', class:'toolbtn', title:'チャット'),note_comments_path(@note.id) %>
   </div>
   <div class="tools">
-    <%= link_to image_tag('notification.png', class:'toolbtn', title:'通知を見る'),'#' %>
+  <% if unchecked_notifications.any? %>
+    <div class='notification-mark'></div>
+  <% end %>
+    <%= link_to image_tag('notification.png', class:'toolbtn', title:'通知を見る'),notifications_path %>
   </div>
   <div class="tools">
     <%= link_to image_tag('garbage-box.png', class:'toolbtn',title:'メモを削除'),note_path(@note.id), method: :delete, data: { confirm: 'メモを削除しますか？' } %>
