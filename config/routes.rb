@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:index, :create, :destroy]
   end
   resources :users, only: [:show, :edit, :update, :destroy]
-  resources :notifications, only: [:index, :destroy] do
+  resources :notifications, only: :index do
     collection do
       get :destroy_all
     end
