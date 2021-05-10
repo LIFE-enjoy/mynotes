@@ -17,6 +17,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
+    return redirect_to note_comments_path unless @comment.user_id == current_user
     if @comment.destroy
       redirect_to note_comments_path, notice: 'コメントを削除しました'
     else
