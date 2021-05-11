@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   def index
     @user = current_user
     @note = Note.find(params[:note_id])
-    @comments = Comment.where(note_id: @note.id)
+    @comments = Comment.where(note_id: @note.id).last(100)
     @comment = Comment.new
     @notifications = current_user.passive_notifications
     #@notificationの中でまだ確認していない(indexに一度も遷移していない)通知のみ
