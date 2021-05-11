@@ -6,7 +6,7 @@ class Comment < ApplicationRecord
   validates :content, presence: true
 
   after_create_commit { CommentBroadcastJob.perform_later self }
-  after_commit  :create_notification_comment
+  after_create_commit  :create_notification_comment
 
   def create_notification_comment
     @comment = Comment.order(updated_at: :desc).first
