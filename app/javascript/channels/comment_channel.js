@@ -14,10 +14,11 @@ const commentRoom = consumer.subscriptions.create("CommentChannel", {
     console.log(show_user)
     console.log(data['chat_user'])
     if (data['chat_user'] == show_user){
-        $('#contents-row').prepend(data['message_right'])
+        $('#contents-row').append(data['message_right'])
       }else{
-        $('#contents-row').prepend(data['message_left'])
+        $('#contents-row').append(data['message_left'])
       }
+    $('#contents-row').animate({ scrollTop: $('#contents-row')[0].scrollHeight},0)
   },
   speak: function(comment) {
     return this.perform('speak',{message: comment});

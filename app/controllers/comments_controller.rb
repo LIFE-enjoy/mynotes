@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   def index
     @user = current_user
     @note = Note.find(params[:note_id])
-    @comments = Comment.where(note_id: @note.id).order(id: 'DESC')
+    @comments = Comment.where(note_id: @note.id)
     @comment = Comment.new
     @notifications = current_user.passive_notifications
     #@notificationの中でまだ確認していない(indexに一度も遷移していない)通知のみ
@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    return redirect_to note_comments_path unless @comment.user_id == current_user
+    return redirect_to note_comments_path unless @comment.user_id == current_user.id
     if @comment.destroy
       redirect_to note_comments_path, notice: 'コメントを削除しました'
     else
