@@ -2,12 +2,18 @@
   <div class="book-top">
     <div class="book-left">
       <div class="contents-row" id='contents-row'>
-          <%= render @comments %>
+      <% @comments.each do |comment| %>
+        <% if comment.user.id == current_user.id%>
+            <%= render partial: 'comment_right', locals: {comment:comment} %>
+        <% else %>
+            <%= render partial: 'comment_left', locals: {comment:comment} %>
+        <% end %>
+      <% end %>
       </div>
       <div class="comment-container">
         <textarea id="comment-text" class='comment-text' name="content" placeholder="コメントする" cols="50em" rows="1" wrap="hard"></textarea>
         <%= button_to "送信", note_comments_path(@note.id), class:'comment-btn', id:'comment-btn' %>
-        <input type="hidden" data-behavior="comment_speaker" data-user="<%= current_user.id %>" data-note="<%= @note.id %>">
+        <input type="hidden" id ='user', data-behavior="comment_speaker" data-user="<%= current_user.id %>" data-note="<%= @note.id %>">
       </div>
     </div>
     <div class="book-right">

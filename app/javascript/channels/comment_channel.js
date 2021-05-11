@@ -10,7 +10,14 @@ const commentRoom = consumer.subscriptions.create("CommentChannel", {
   },
 
   received: function(data) {
-    $('#contents-row').prepend(data['message']);
+    const show_user = $('#user').data('user')
+    console.log(show_user)
+    console.log(data['chat_user'])
+    if (data['chat_user'] == show_user){
+        $('#contents-row').prepend(data['message_right'])
+      }else{
+        $('#contents-row').prepend(data['message_left'])
+      }
   },
   speak: function(comment) {
     return this.perform('speak',{message: comment});
