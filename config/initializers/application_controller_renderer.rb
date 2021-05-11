@@ -2,7 +2,7 @@
 
 ActiveSupport::Reloader.to_prepare do
   ApplicationController.renderer.defaults.merge!(
-    http_host: 'localhost:3000',
+    http_host: 'mynotes-app35013.herokuapp.com',
     https:  Rails.env.production?
   )
 end
