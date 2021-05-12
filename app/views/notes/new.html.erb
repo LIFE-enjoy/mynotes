@@ -11,7 +11,7 @@
             <% if @user.avatar.attached? %>
               <%= link_to image_tag(@user.avatar, class:'user-icon'),user_path(@note.user_id) %>
             <% else %>
-              <div class='user-icon'>
+              <div class='usericon'>
                 <%= link_to image_tag('user.png', class:'user-icon'),user_path(@note.user_id) %>
               </div>
             <% end %>

@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :note do
-    title                 {Faker::Lorem.word}
+    title  {Faker::Lorem.word}
+    association :user
   end
 end
