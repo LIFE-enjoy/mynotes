@@ -9,7 +9,7 @@
   </div>
   <div class="lower-comment">
     <div class="comment-date">
-        <%= l comment.created_at %>
+        <%= comment.created_at.strftime('%m/%d %H:%M') %>
     </div>
     <div class="comment-content">
       <%= safe_join(comment.content.split("\n"),tag(:br)) %>
