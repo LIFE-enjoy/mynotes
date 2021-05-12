@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Users", type: :system do
+RSpec.describe "新規登録", type: :system do
   before do
     @user = FactoryBot.build(:user)
     Capybara.default_max_wait_time = 5
@@ -9,7 +9,6 @@ RSpec.describe "Users", type: :system do
     it '正しい情報を入力すればユーザー新規登録ができてトップページに移動する' do
       # 新規登録ページに移動する
       visit new_user_registration_path
-      # トップページアクションが
       # ユーザー情報を入力する
       fill_in 'user_nickname', with: @user.nickname
       fill_in 'user_email', with: @user.email
@@ -29,7 +28,6 @@ RSpec.describe "Users", type: :system do
     it '誤った情報ではユーザー新規登録ができずに新規登録ページへ戻ってくる' do
       # 新規登録ページに移動する
       visit new_user_registration_path
-      # トップページアクションが
       # ユーザー情報を入力する
       fill_in 'user_nickname', with: ''
       fill_in 'user_email', with: ''
@@ -39,6 +37,39 @@ RSpec.describe "Users", type: :system do
       expect{find('input[name="commit"]').click}.to change{ User.count }.by(0)
       # 新規登録ページへ戻されることを確認する
       expect(current_path).to eq("/users")
+    end
+  end
+end
+
+RSpec.describe "ログイン", type: :system do
+  before do
+    @user = FactoryBot.create(:user)
+    Capybara.default_max_wait_time = 5
+  end
+  context 'ログインできるとき' do 
+    it '正しい情報を入力すればログインができてトップページに移動する' do
+      # ログインページに移動する
+      visit new_user_session_path
+      # ユーザー情報を入力する
+      fill_in 'user_email', with: @user.email
+      fill_in 'user_password', with: @user.password
+      # ログインボタンを押す
+      find('input[name="commit"]').click
+      # トップページへ遷移したことを確認する
+      expect(current_path).to eq(root_path)
+    end
+  end
+  context 'ユーザー新規登録ができないとき' do
+    it '誤った情報ではログインができずにログインページへ戻ってくる' do
+      # ログインページに移動する
+      visit new_user_session_path
+      # ユーザー情報を入力する
+      fill_in 'user_email', with: ''
+      fill_in 'user_password', with: ''
+      # ログインボタンを押す
+      find('input[name="commit"]').click
+      # ログインページへ戻されることを確認する
+      expect(current_path).to eq(new_user_session_path)
     end
   end
 end
