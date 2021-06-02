@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def redirect_show
-    redirect_to action: :show unless current_user.id == User.find(params[:id])
+    redirect_to action: :show unless current_user.id == User.find(params[:id]).id
     return
   end
 end

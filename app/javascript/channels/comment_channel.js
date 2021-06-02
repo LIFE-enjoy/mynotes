@@ -20,6 +20,7 @@ const commentRoom = consumer.subscriptions.create("CommentChannel", {
       }
     $('#contents-row').animate({ scrollTop: $('#contents-row')[0].scrollHeight},0)
   },
+  
   speak: function(comment) {
     return this.perform('speak',{message: comment});
   }
